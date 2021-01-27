@@ -1,6 +1,6 @@
-#CHESS
+# CHESS
 
-##27 01 2021
+## 27 01 2021
 
 Do a chess game
 
