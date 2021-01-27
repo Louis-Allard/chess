@@ -1,6 +1,41 @@
-.pieces {
-    background: url('assets/sprites.jpeg');
-    display: inline-block;
-    height: 700px;
-    width: 249px;
-  }
+.w_king {
+    background: url('assets/sprites.png') 0px 287px;
+    display: block;
+    height: 70px;
+    width: 70px;
+}
+
+.w_queen {
+    background: url('assets/sprites.png') 330px 287px;
+    display: block;
+    height: 70px;
+    width: 70px;
+}
+
+.b_queen {
+    background: url('assets/sprites.png') 270px 287px;
+    display: block;
+    height: 70px;
+    width: 70px;
+}
+
+.b_knight {
+    background: url('assets/sprites.png') 205px 287px;
+    display: block;
+    height: 70px;
+    width: 70px;
+}
+
+.b_tower {
+    background: url('assets/sprites.png') 135px 287px;
+    display: block;
+    height: 70px;
+    width: 70px;
+}
+
+.b_pawn {
+    background: url('assets/sprites.png') 75px 287px;
+    display: block;
+    height: 70px;
+    width: 70px;
+}
