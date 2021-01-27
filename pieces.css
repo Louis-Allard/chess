@@ -1,0 +1,6 @@
+.pieces {
+    background: url('assets/sprites.jpeg');
+    display: inline-block;
+    height: 700px;
+    width: 249px;
+  }
