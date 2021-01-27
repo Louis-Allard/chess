@@ -1,0 +1,11 @@
+.caseBlanc, .caseBrun{
+    height : 80px;
+    width : 80px;
+    border : 1px solid #000000;
+    }
+    .caseBrun {
+    background-color: rgb(46, 43, 43);
+    }
+    .caseBlanc {
+    background-color: #ffffff;
+    }
