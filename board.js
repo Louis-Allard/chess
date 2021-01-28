@@ -26,17 +26,36 @@ for (let l = 8; l > 0; l--) {
                     document.write('<div class="w_queen"></div>')
                 }
                 if ((col[i] === "C" && l === 1) || (col[i] === "F" && l === 1)) {
-                    document.write('<div class="b_queen"></div>')
+                    document.write('<div class="w_bishop"></div>')
                 }
                 if ((col[i] === "B" && l === 1) || (col[i] === "G" && l === 1)) {
-                    document.write('<div class="b_knight"></div>')
+                    document.write('<div class="w_knight"></div>')
                 }
                 if ((col[i] === "A" && l === 1) || (col[i] === "H" && l === 1)) {
-                    document.write('<div class="b_tower"></div>')
+                    document.write('<div class="w_tower"></div>')
                 }
                 if ((col[i] === "A" && l === 2) || (col[i] === "B" && l === 2) || (col[i] === "C" && l === 2) || (col[i] === "D" && l === 2) || (col[i] === "E" && l === 2) || (col[i] === "F" && l === 2) || (col[i] === "G" && l === 2) || (col[i] === "H" && l === 2)) {
+                    document.write('<div class="w_pawn"></div>')
+                }     
+                
+                if (col[i] === "E" && l === 8) {
+                    document.write('<div class="b_king"></div>')
+                }
+                if (col[i] === "D" && l === 8) {
+                    document.write('<div class="b_queen"></div>')
+                }
+                if ((col[i] === "C" && l === 8) || (col[i] === "F" && l === 8)) {
+                    document.write('<div class="b_bishop"></div>')
+                }
+                if ((col[i] === "B" && l === 8) || (col[i] === "G" && l === 8)) {
+                    document.write('<div class="b_knight"></div>')
+                }
+                if ((col[i] === "A" && l === 8) || (col[i] === "H" && l === 8)) {
+                    document.write('<div class="b_tower"></div>')
+                }
+                if ((col[i] === "A" && l === 7) || (col[i] === "B" && l === 7) || (col[i] === "C" && l === 7) || (col[i] === "D" && l === 7) || (col[i] === "E" && l === 7) || (col[i] === "F" && l === 7) || (col[i] === "G" && l === 7) || (col[i] === "H" && l === 7)) {
                     document.write('<div class="b_pawn"></div>')
-                }                                                                 
+                }                 
                 document.write('</div>');
 
             }

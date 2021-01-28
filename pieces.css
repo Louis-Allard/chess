@@ -1,41 +1,53 @@
-.w_king {
-    background: url('assets/sprites.png') 0px 287px;
+.w_king, .w_queen, .w_bishop, .w_knight, .w_tower, .w_pawn, .b_king, .b_queen, .b_bishop, .b_knight, .b_tower, .b_pawn  {
     display: block;
     height: 70px;
     width: 70px;
+}
+
+.w_king {
+    background: url('assets/sprites.png') 0px 287px;
 }
 
 .w_queen {
     background: url('assets/sprites.png') 330px 287px;
-    display: block;
-    height: 70px;
-    width: 70px;
+}
+
+.w_bishop {
+    background: url('assets/sprites.png') 270px 287px;
+}
+
+.w_knight {
+    background: url('assets/sprites.png') 205px 287px;
+}
+
+.w_tower {
+    background: url('assets/sprites.png') 135px 287px;
+}
+
+.w_pawn {
+    background: url('assets/sprites.png') 75px 287px;
+}
+
+.b_king {
+    background: url('assets/sprites.png') 0px 80px;
 }
 
 .b_queen {
-    background: url('assets/sprites.png') 270px 287px;
-    display: block;
-    height: 70px;
-    width: 70px;
+    background: url('assets/sprites.png') 330px 80px;
+}
+
+.b_bishop {
+    background: url('assets/sprites.png') 270px 80px;
 }
 
 .b_knight {
-    background: url('assets/sprites.png') 205px 287px;
-    display: block;
-    height: 70px;
-    width: 70px;
+    background: url('assets/sprites.png') 205px 80px;
 }
 
 .b_tower {
-    background: url('assets/sprites.png') 135px 287px;
-    display: block;
-    height: 70px;
-    width: 70px;
+    background: url('assets/sprites.png') 135px 80px;
 }
 
 .b_pawn {
-    background: url('assets/sprites.png') 75px 287px;
-    display: block;
-    height: 70px;
-    width: 70px;
+    background: url('assets/sprites.png') 75px 80px;
 }
