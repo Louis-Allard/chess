@@ -12,28 +12,28 @@
     width: 70px;
 }
 
-.b_queen {
+.w_bishop {
     background: url('assets/sprites.png') 270px 287px;
     display: block;
     height: 70px;
     width: 70px;
 }
 
-.b_knight {
+.w_knight {
     background: url('assets/sprites.png') 205px 287px;
     display: block;
     height: 70px;
     width: 70px;
 }
 
-.b_tower {
+.w_tower {
     background: url('assets/sprites.png') 135px 287px;
     display: block;
     height: 70px;
     width: 70px;
 }
 
-.b_pawn {
+.w_pawn {
     background: url('assets/sprites.png') 75px 287px;
     display: block;
     height: 70px;
