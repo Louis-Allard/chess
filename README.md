@@ -10,6 +10,11 @@ Rules into json
 
 ***
 
+## Board
+
+![Screenshot](board.png)
+
 ## Moves
 
 ![Screenshot](move.jpeg)
+
