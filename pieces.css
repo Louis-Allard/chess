@@ -1,5 +1,4 @@
 .w_king, .w_queen, .w_bishop, .w_knight, .w_tower, .w_pawn, .b_king, .b_queen, .b_bishop, .b_knight, .b_tower, .b_pawn  {
-    display: block;
     height: 70px;
     width: 70px;
 }
@@ -50,4 +49,12 @@
 
 .b_pawn {
     background: url('assets/sprites.png') 75px 80px;
+}
+
+.on {
+    display: block;
+}
+
+.off {
+    display: none;
 }

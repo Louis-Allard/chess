@@ -7,4 +7,15 @@
  |_|     |_| |_____| \_____| |_____| /_____/ 
  ************************************************/
 
-document.write('<div class="pieces"></div>');
+function pieces(n, pos_x, pos_y, disp) {
+    /**  Control the piece display using disp param **/
+    switch (disp) {
+        case 0:
+            play = on;
+            break;
+        case 1:
+            play = off;
+        default:
+            break;
+    }
+};
