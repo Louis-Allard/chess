@@ -35,8 +35,8 @@ for (let l = 8; l > 0; l--) {
                     document.write('<div id="w_tower" class="w_tower on" title="Tower"></div>')
                 }
                 if ((col[i] === "A" && l === 2) || (col[i] === "B" && l === 2) || (col[i] === "C" && l === 2) || (col[i] === "D" && l === 2) || (col[i] === "E" && l === 2) || (col[i] === "F" && l === 2) || (col[i] === "G" && l === 2) || (col[i] === "H" && l === 2)) {
-                    document.write('<div id="w_pawn"class="w_pawn on" title="Pawn"></div>')
-                }         
+                    document.write('<div id="w_pawn"class="w_pawn on" title="Pawn" onclick="moves()"></div>')
+                }
                 if (col[i] === "E" && l === 8) {
                     document.write('<div id="b_king" class="b_king on" title="King"></div>')
                 }
@@ -54,7 +54,7 @@ for (let l = 8; l > 0; l--) {
                 }
                 if ((col[i] === "A" && l === 7) || (col[i] === "B" && l === 7) || (col[i] === "C" && l === 7) || (col[i] === "D" && l === 7) || (col[i] === "E" && l === 7) || (col[i] === "F" && l === 7) || (col[i] === "G" && l === 7) || (col[i] === "H" && l === 7)) {
                     document.write('<div id="b_pawn" class="b_pawn on" title="Pawn"></div>')
-                }                 
+                }
                 document.write('</div>');
 
             }
@@ -72,3 +72,33 @@ for (let p = 0; p < col.length; p++) {
 document.write('</tr>')
 
 document.write('</table>');
+
+/*********************************************
+ _____   _   _____   _____   _____   _____  
+ |  _  \ | | | ____| /  ___| | ____| /  ___/ 
+ | |_| | | | | |__   | |     | |__   | |___  
+ |  ___/ | | |  __|  | |     |  __|  \___  \ 
+ | |     | | | |___  | |___  | |___   ___| | 
+ |_|     |_| |_____| \_____| |_____| /_____/ 
+ ************************************************/
+
+
+function pieces(n, pos_x, pos_y, disp) {
+    /**  Control the piece display using disp param **/
+    switch (disp) {
+        case 0:
+            play = on;
+            break;
+        case 1:
+            play = off;
+        default:
+            break;
+    }
+};
+
+function moves() {
+    fetch('http://127.0.0.1:5500/moves.json')
+        .then(response => {
+            console.log(response.json)
+        })
+}
