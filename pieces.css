@@ -68,6 +68,6 @@
 *******************/
 
 #w_king:hover, #w_queen:hover, #w_bishop:hover, #w_knight:hover, #w_tower:hover, #w_pawn:hover, #b_king:hover, #b_queen:hover, #b_bishop:hover, #b_knight:hover, #b_tower:hover, #b_pawn:hover {
-    background-color: rgba(132, 199, 93, 0.829);
+    background-color:#679403;
     cursor: pointer;
 }
