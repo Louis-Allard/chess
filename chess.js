@@ -97,9 +97,14 @@ function pieces(n, pos_x, pos_y, disp) {
 };
 
 function moves(id) {
-    fetch('http://127.0.0.1:5500/moves.json')
+    url="http://127.0.0.1:5500/moves.json";
+    fetch(url)
         .then(response => {
+            console.log("--------------------");
             console.log(response.json);
             console.log("id: " + id);
+            console.log("--------------------");
+            const obj = JSON.parse(response.json);
+            console.log(obj.w_pawn);
         })
 }
