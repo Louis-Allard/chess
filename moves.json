@@ -1,5 +1,6 @@
 {
         "w_pawn": [{
+            "name": "w_pawn",
             "color": "white",
             "case_color": "0",
             "move": {
@@ -8,6 +9,7 @@
             }
         }],
         "w_king": [{
+            "name": "w_king",
             "color": "white",
             "case_color": "0",
             "move": {
@@ -16,6 +18,7 @@
             }
         }],
         "w_queen":[{
+            "name": "w_queen",
             "color": "white",
             "case_color": "0",
             "move": {
@@ -24,6 +27,7 @@
             }
         }],
         "w_knight": [{
+            "name": "w_knight",
             "color": "white",
             "case_color": "0",
             "move": {
@@ -32,6 +36,7 @@
             }
         }],
         "w_bishop": [{
+            "name": "w_bishop",
             "color": "white",
             "case_color": "white",
             "move": {
@@ -40,6 +45,7 @@
             }
         }],
         "w_tower": [{
+            "name": "w_tower",            
             "color": "white",
             "case_color": "0",
             "move": {
@@ -48,6 +54,7 @@
             }
         }],
         "b_pawn": [{
+            "name": "b_pawn",             
             "color": "white",
             "case_color": "0",
             "move": {
@@ -56,6 +63,7 @@
             }
         }],
         "b_king": [{
+            "name": "b_king",               
             "color": "white",
             "case_color": "0",
             "move": {
@@ -64,6 +72,7 @@
             }
         }],
         "b_queen": [{
+            "name": "b_queen",             
             "color": "white",
             "case_color": "0",
             "move": {
@@ -72,6 +81,7 @@
             }
         }],
         "b_knight": [{
+            "name": "b_knight",
             "color": "white",
             "case_color": "0",
             "move": {
@@ -80,6 +90,7 @@
             }
         }],
         "b_bishop": [{
+            "name": "b_bishop",            
             "color": "white",
             "case_color": "white",
             "move": {
@@ -88,6 +99,7 @@
             }
         }],
         "b_tower": [{
+            "name": "b_tower",              
             "color": "white",
             "case_color": "0",
             "move": {
