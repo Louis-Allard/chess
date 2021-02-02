@@ -7,3 +7,13 @@ Do a chess game
 Stack => Javascript - css
 
 Rules into json
+
+***
+
+## Board
+
+![Screenshot](board.png)
+
+## Moves
+
+![Screenshot](move.jpeg)
