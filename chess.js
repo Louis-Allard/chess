@@ -97,14 +97,23 @@ function pieces(n, pos_x, pos_y, disp) {
 };
 
 function moves(id) {
-    url="http://127.0.0.1:5500/moves.json";
+    url = "http://127.0.0.1:5500/moves.json";
     fetch(url)
-        .then(response => {
-            console.log("--------------------");
-            console.log(response.json);
-            console.log("id: " + id);
-            console.log("--------------------");
-            const obj = JSON.parse(response.json);
-            console.log(obj.w_pawn);
+        .then((response) => {
+            if (response.status >= 200 && response.status <= 299) {
+                return response.json();
+            } else {
+                throw Error(response.statusText);
+            }
         })
+        .then((jsonResponse) => {
+            console.log("------------------------");
+            console.log("jsonResponse : ", jsonResponse);
+            console.log("------------------------");
+            for(let i=0; i<url.length;i++) {
+                console.log(url.color)
+            }
+        }).catch((error) => {
+            console.log(error);
+        });
 }

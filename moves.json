@@ -1,98 +1,98 @@
 {
-    "w_pawn":{
-        "color":"white",
-        "case_color":"0",
-        "move": {
-            "c":1,
-            "l":0
-        }
-    },
-    "w_king":{
-        "color":"white",
-        "case_color":"0",
-        "move": {
-            "c":1,
-            "l":1
-        }
-    },    
-    "w_queen":{
-        "color":"white",
-        "case_color":"0",
-        "move": {
-            "c":"N",
-            "l":"N"
-        }
-    },   
-    "w_knight":{
-        "color":"white",
-        "case_color":"0",
-        "move": {
-            "c":"1",
-            "l":"2"
-        }
-    },        
-    "w_bishop":{
-        "color":"white",
-        "case_color":"white",
-        "move": {
-            "c":"N",
-            "l":"N"
-        }
-    },         
-    "w_tower":{
-        "color":"white",
-        "case_color":"0",
-        "move": {
-            "c":"N",
-            "l":"0"
-        }
-    },
-    "b_pawn":{
-        "color":"white",
-        "case_color":"0",
-        "move": {
-            "c":1,
-            "l":0
-        }
-    },
-    "b_king":{
-        "color":"white",
-        "case_color":"0",
-        "move": {
-            "c":1,
-            "l":1
-        }
-    },    
-    "b_queen":{
-        "color":"white",
-        "case_color":"0",
-        "move": {
-            "c":"N",
-            "l":"N"
-        }
-    },   
-    "b_knight":{
-        "color":"white",
-        "case_color":"0",
-        "move": {
-            "c":"1",
-            "l":"2"
-        }
-    },        
-    "b_bishop":{
-        "color":"white",
-        "case_color":"white",
-        "move": {
-            "c":"N",
-            "l":"N"
-        }
-    },         
-    "b_tower":{
-        "color":"white",
-        "case_color":"0",
-        "move": {
-            "c":"N",
-            "l":"0"
-        }
-    }  
+        "w_pawn": [{
+            "color": "white",
+            "case_color": "0",
+            "move": {
+                "c": 1,
+                "l": 0
+            }
+        }],
+        "w_king": [{
+            "color": "white",
+            "case_color": "0",
+            "move": {
+                "c": 1,
+                "l": 1
+            }
+        }],
+        "w_queen":[{
+            "color": "white",
+            "case_color": "0",
+            "move": {
+                "c": "N",
+                "l": "N"
+            }
+        }],
+        "w_knight": [{
+            "color": "white",
+            "case_color": "0",
+            "move": {
+                "c": "1",
+                "l": "2"
+            }
+        }],
+        "w_bishop": [{
+            "color": "white",
+            "case_color": "white",
+            "move": {
+                "c": "N",
+                "l": "N"
+            }
+        }],
+        "w_tower": [{
+            "color": "white",
+            "case_color": "0",
+            "move": {
+                "c": "N",
+                "l": "0"
+            }
+        }],
+        "b_pawn": [{
+            "color": "white",
+            "case_color": "0",
+            "move": {
+                "c": 1,
+                "l": 0
+            }
+        }],
+        "b_king": [{
+            "color": "white",
+            "case_color": "0",
+            "move": {
+                "c": 1,
+                "l": 1
+            }
+        }],
+        "b_queen": [{
+            "color": "white",
+            "case_color": "0",
+            "move": {
+                "c": "N",
+                "l": "N"
+            }
+        }],
+        "b_knight": [{
+            "color": "white",
+            "case_color": "0",
+            "move": {
+                "c": "1",
+                "l": "2"
+            }
+        }],
+        "b_bishop": [{
+            "color": "white",
+            "case_color": "white",
+            "move": {
+                "c": "N",
+                "l": "N"
+            }
+        }],
+        "b_tower": [{
+            "color": "white",
+            "case_color": "0",
+            "move": {
+                "c": "N",
+                "l": "0"
+            }
+        }]
 }
