@@ -3,7 +3,7 @@
             "name": "w_pawn",
             "color": "white",
             "case_color": "0",
-            "move": {
+            "moves": {
                 "c": 1,
                 "l": 0
             }
@@ -12,7 +12,7 @@
             "name": "w_king",
             "color": "white",
             "case_color": "0",
-            "move": {
+            "moves": {
                 "c": 1,
                 "l": 1
             }
@@ -21,7 +21,7 @@
             "name": "w_queen",
             "color": "white",
             "case_color": "0",
-            "move": {
+            "moves": {
                 "c": "N",
                 "l": "N"
             }
@@ -30,7 +30,7 @@
             "name": "w_knight",
             "color": "white",
             "case_color": "0",
-            "move": {
+            "moves": {
                 "c": "1",
                 "l": "2"
             }
@@ -39,7 +39,7 @@
             "name": "w_bishop",
             "color": "white",
             "case_color": "white",
-            "move": {
+            "moves": {
                 "c": "N",
                 "l": "N"
             }
@@ -48,7 +48,7 @@
             "name": "w_tower",            
             "color": "white",
             "case_color": "0",
-            "move": {
+            "moves": {
                 "c": "N",
                 "l": "0"
             }
@@ -57,7 +57,7 @@
             "name": "b_pawn",             
             "color": "white",
             "case_color": "0",
-            "move": {
+            "moves": {
                 "c": 1,
                 "l": 0
             }
@@ -66,7 +66,7 @@
             "name": "b_king",               
             "color": "white",
             "case_color": "0",
-            "move": {
+            "moves": {
                 "c": 1,
                 "l": 1
             }
@@ -75,7 +75,7 @@
             "name": "b_queen",             
             "color": "white",
             "case_color": "0",
-            "move": {
+            "moves": {
                 "c": "N",
                 "l": "N"
             }
@@ -84,7 +84,7 @@
             "name": "b_knight",
             "color": "white",
             "case_color": "0",
-            "move": {
+            "moves": {
                 "c": "1",
                 "l": "2"
             }
@@ -93,7 +93,7 @@
             "name": "b_bishop",            
             "color": "white",
             "case_color": "white",
-            "move": {
+            "moves": {
                 "c": "N",
                 "l": "N"
             }
@@ -102,7 +102,7 @@
             "name": "b_tower",              
             "color": "white",
             "case_color": "0",
-            "move": {
+            "moves": {
                 "c": "N",
                 "l": "0"
             }
