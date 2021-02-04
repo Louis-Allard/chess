@@ -12,8 +12,13 @@ Rules into json
 
 ## Board
 
-![Screenshot](board.png)
+![Screenshot](board.jpg)
 
 ## Moves
 
-![Screenshot](move.jpeg)
+![Screenshot](move.jpg)
+
+
+## cases name
+
+![Screenshot](cases.jpg)
