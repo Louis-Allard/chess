@@ -103,8 +103,8 @@ function pieces_showmoves(n, pos_x, pos_y) {
                 if (jsonResponse[n][i].name == n) {
                     for (let j = 0; j < moves.length; j++) {
                         if (moves[j]["enabled"] == "1") {
-                           let c = moves[j]["case"];
-                            casesname(c);
+                            let c = moves[j]["case"];
+                            casesname(c, pos_x, pos_y);
                         }
                     }
                 }
@@ -117,7 +117,7 @@ function pieces_showmoves(n, pos_x, pos_y) {
         });
 };
 
-function casesname(c) {
+function casesname(c, pos_x, pos_y) {
     /** Name cases around each piece **/
     url = "http://127.0.0.1:5500/moves.json";
     fetch(url)
@@ -129,20 +129,19 @@ function casesname(c) {
             }
         })
         .then((jsonResponse) => {
-            console.log(jsonResponse["cases"]);
             console.log("Cases authorisées: " + c);
-            for(let i=0; i<jsonResponse["cases"].length; i++){
-                if(jsonResponse["cases"][i]['case'] === c){
+            for (let i = 0; i < jsonResponse["cases"].length; i++) {
+                if (jsonResponse["cases"][i]['case'] === c) {
                     console.log(jsonResponse["cases"][i])
+                    /**
+                    * Si name = id
+                    *  Si moves.enabled = 1
+                    *      Pour Chaque case
+                    *          Colorer(pos_x = pos_x + c, pos_y = pos_y + l)
+                    */
+
                 }
             }
-            /**
-             * Si name = id
-             *  Si moves.enabled = 1
-             *      Pour Chaque case
-             *          Colorer(pos_x = pos_x + c, pos_y = pos_y + l)
-             * 
-             */
         }
         ).catch((error) => {
             console.log("Error " + error);
