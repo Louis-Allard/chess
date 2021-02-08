@@ -14,6 +14,7 @@ Rules into json
 
 - [x] board
 - [x] sprites
+- [x] Cases's identification
 - [x] Pieces's identification
 - [ ] Show enable cases
 - [ ] Move pieces
