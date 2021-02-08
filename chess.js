@@ -20,8 +20,8 @@ for (let l = 8; l > 0; l--) {
             if (j === c) {
                 document.write('<td><div id="' + l + '|' + c + '" class="' + color + '">');
                 if (col[i] === "E" && l === 1) {
-                   // document.write('<div id="w_king" class="w_king on" title="King" onclick="pieces_showmoves(id,`' + col[i] + '`,' + l + ')"></div>');
-                   document.write('<div id="w_pawn"class="w_king on" title="Pawn" onclick="casesname()"></div>');
+                    // document.write('<div id="w_king" class="w_king on" title="King" onclick="pieces_showmoves(id,`' + col[i] + '`,' + l + ')"></div>');
+                    document.write('<div id="w_king" class="w_king on" title="King" onclick="pieces_showmoves(id,`' + col[i] + '`,' + l + ')"></div>');
                 }
                 if (col[i] === "D" && l === 1) {
                     document.write('<div id="w_queen" class="w_queen on" title="Queen" onclick="pieces_showmoves(id,`' + col[i] + '`,' + l + ')"></div>');
@@ -101,9 +101,13 @@ function pieces_showmoves(n, pos_x, pos_y) {
         })
         .then((jsonResponse) => {
             for (let i = 0; i < jsonResponse[n].length; i++) {
+                const moves = jsonResponse[n][i].moves;
                 if (jsonResponse[n][i].name == n) {
-                    const moves = jsonResponse[n][i].moves;
-                    console.log("Cases autorisées: ", moves);
+                    for (let j = 0; j < moves.length; j++) {
+                        if (moves[j]["enabled"] == "1") {
+                            console.log(moves[j]["case"]);
+                        }
+                    }
                 }
                 else {
                     console.error(error);
@@ -126,14 +130,14 @@ function casesname(pos_x, pos_y) {
             }
         })
         .then((jsonResponse) => {
-                console.log(jsonResponse["cases"]);
-                /**
-                 * Si name = id
-                 *  Si moves.enabled = 1
-                 *      Pour Chaque case
-                 *          Colorer(pos_x = pos_x + c, pos_y = pos_y + l)
-                 * 
-                 */
+            console.log(jsonResponse["cases"]);
+            /**
+             * Si name = id
+             *  Si moves.enabled = 1
+             *      Pour Chaque case
+             *          Colorer(pos_x = pos_x + c, pos_y = pos_y + l)
+             * 
+             */
         }
         ).catch((error) => {
             console.log("Error " + error);
