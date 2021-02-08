@@ -30,7 +30,7 @@ function pieces_showmoves(n, pos_x, pos_y) {
                     for (let j = 0; j < moves.length; j++) {
                         if (moves[j]["enabled"] == "1") {
                             let c = moves[j]["case"];
-                            casesname(c, pos_x, pos_y);
+                            casesEnable(c, pos_x, pos_y);
                         }
                     }
                 }
@@ -43,7 +43,7 @@ function pieces_showmoves(n, pos_x, pos_y) {
         });
 };
 
-function casesname(c, pos_x, pos_y) {
+function casesEnable(c, pos_x, pos_y) {
     /** Name cases around each piece **/
     url = "http://127.0.0.1:5500/moves.json";
     const col_letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X"];
@@ -66,7 +66,7 @@ function casesname(c, pos_x, pos_y) {
                         }
                     }
                     pos_y = Number(pos_y) + Number(lig);
-                    alert("cases autorisées: [" + pos_x + " | " + Number(pos_y) + "]");
+                    console.log("cases autorisées: [" + pos_x + Number(pos_y) + "]");
                 }
             }
         }
