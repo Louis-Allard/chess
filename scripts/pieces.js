@@ -66,9 +66,13 @@ function casesEnable(c, pos_x, pos_y) {
                         }
                     }
                     pos_y = Number(pos_y) + Number(lig);
-                    let caseEnable =  pos_x + Number(pos_y);
-                    console.log("cases autorisées: " + caseEnable);
-                    document.getElementById(caseEnable).classList.add("caseEnable");
+                    let caseEnable = pos_x + Number(pos_y);
+                    if (Number(pos_y >= 1)) {
+                        console.log("cases autorisées: " + caseEnable);
+                        document.getElementById(caseEnable).classList.add("caseEnable");
+                        setTimeout(() => { document.getElementById(caseEnable).classList.remove("caseEnable") }, 5000);
+                    }
+
                 }
             }
         }
