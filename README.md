@@ -10,6 +10,15 @@ Rules into json
 
 ***
 
+## Steps
+
+- [] board
+- [] sprites
+- [] Pieces's identification
+- [] Show emable cases
+- [] Move pieces
+- [] Collisions
+
 ## Board
 
 ![Screenshot](board.jpg)
