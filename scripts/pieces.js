@@ -46,6 +46,7 @@ function pieces_showmoves(n, pos_x, pos_y) {
 function casesname(c, pos_x, pos_y) {
     /** Name cases around each piece **/
     url = "http://127.0.0.1:5500/moves.json";
+    const col_letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X"];
     fetch(url)
         .then((response) => {
             if (response.status >= 200 && response.status <= 299) {
@@ -55,17 +56,17 @@ function casesname(c, pos_x, pos_y) {
             }
         })
         .then((jsonResponse) => {
-            console.log("Cases authorisées: " + c);
             for (let i = 0; i < jsonResponse["cases"].length; i++) {
                 if (jsonResponse["cases"][i]['case'] === c) {
-                    console.log(jsonResponse["cases"][i])
-                    /**
-                    * Si name = id
-                    *  Si moves.enabled = 1
-                    *      Pour Chaque case
-                    *          Colorer(pos_x = pos_x + c, pos_y = pos_y + l)
-                    */
-
+                    let col = jsonResponse["cases"][i]["c"];
+                    let lig = jsonResponse["cases"][i]["l"];
+                    for (let i = 0; i < col_letters.length; i++) {
+                        if (col_letters[i] === pos_x) {
+                            pos_x = col_letters[i + Number(col)];
+                        }
+                    }
+                    pos_y = Number(pos_y) + Number(lig);
+                    alert("cases autorisées: [" + pos_x + " | " + Number(pos_y) + "]");
                 }
             }
         }
