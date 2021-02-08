@@ -66,7 +66,9 @@ function casesEnable(c, pos_x, pos_y) {
                         }
                     }
                     pos_y = Number(pos_y) + Number(lig);
-                    console.log("cases autorisées: [" + pos_x + Number(pos_y) + "]");
+                    let caseEnable =  pos_x + Number(pos_y);
+                    console.log("cases autorisées: " + caseEnable);
+                    document.getElementById(caseEnable).classList.add("caseEnable");
                 }
             }
         }
