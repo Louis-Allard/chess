@@ -10,6 +10,10 @@
     background-color: #ffffff;
     }
 
+    .caseEnable {
+        background-color: indianred;
+    }
+
     .pos {
         font-weight: bold;
         text-align: center;
