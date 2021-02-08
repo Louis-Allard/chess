@@ -18,7 +18,7 @@ for (let l = 8; l > 0; l--) {
         for (let i = 0; i < col.length; i++) {
             let j = i + 1;
             if (j === c) {
-                document.write('<td><div id="' + l + '|' + c + '" class="' + color + '">');
+                document.write('<td><div id="' + l + '|' + c + '" class="' + color + '" onclick="alert(`[' +  col[i]  + l + ']`' + ')">');
                 if (col[i] === "E" && l === 1) {
                     document.write('<div id="w_king" class="w_king on" title="King" onclick="pieces_showmoves(id,`' + col[i] + '`,' + l + ')"></div>');
                 }
