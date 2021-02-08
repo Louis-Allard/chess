@@ -12,9 +12,9 @@ Rules into json
 
 ## Steps
 
-- [ ] board
-- [ ] sprites
-- [ ] Pieces's identification
+- [x] board
+- [x] sprites
+- [x] Pieces's identification
 - [ ] Show emable cases
 - [ ] Move pieces
 - [ ] Collisions
