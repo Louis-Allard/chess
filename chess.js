@@ -57,9 +57,7 @@ for (let l = 8; l > 0; l--) {
                     document.write('<div id="b_pawn" class="b_pawn on" title="Pawn" onclick="pieces_showmoves(id,`' + col[i] + '`,' + l + ')"></div>');
                 }
                 document.write('</div>');
-
             }
-
         }
         nombre++;
     }
@@ -105,7 +103,8 @@ function pieces_showmoves(n, pos_x, pos_y) {
                 if (jsonResponse[n][i].name == n) {
                     for (let j = 0; j < moves.length; j++) {
                         if (moves[j]["enabled"] == "1") {
-                            console.log(moves[j]["case"]);
+                           let c = moves[j]["case"];
+                            casesname(c);
                         }
                     }
                 }
@@ -118,7 +117,7 @@ function pieces_showmoves(n, pos_x, pos_y) {
         });
 };
 
-function casesname(pos_x, pos_y) {
+function casesname(c) {
     /** Name cases around each piece **/
     url = "http://127.0.0.1:5500/moves.json";
     fetch(url)
@@ -131,6 +130,12 @@ function casesname(pos_x, pos_y) {
         })
         .then((jsonResponse) => {
             console.log(jsonResponse["cases"]);
+            console.log("Cases authorisées: " + c);
+            for(let i=0; i<jsonResponse["cases"].length; i++){
+                if(jsonResponse["cases"][i]['case'] === c){
+                    console.log(jsonResponse["cases"][i])
+                }
+            }
             /**
              * Si name = id
              *  Si moves.enabled = 1
