@@ -30,7 +30,7 @@ function pieces_showmoves(n, pos_x, pos_y) {
                     for (let j = 0; j < moves.length; j++) {
                         if (moves[j]["enabled"] === "1") {
                             let c = moves[j]["case"];
-                            casesEnable(c, pos_x, pos_y);
+                            casesEnable(c,n,pos_x,pos_y);
                         }
                     }
                 }
@@ -43,7 +43,7 @@ function pieces_showmoves(n, pos_x, pos_y) {
         });
 };
 
-function casesEnable(c, pos_x, pos_y) {
+function casesEnable(c,n, pos_x, pos_y) {
     /** Name cases around each piece **/
     const col_letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X"];
     fetch(url)
@@ -59,10 +59,17 @@ function casesEnable(c, pos_x, pos_y) {
                 if (jsonResponse["cases"][i]['case'] === c) {
                     let col = jsonResponse["cases"][i]["c"];
                     let lig = jsonResponse["cases"][i]["l"];
-                    for (let i = 0; i < col_letters.length; i++) {
-                        if (col_letters[i] === pos_x) {
-                            pos_x = col_letters[i + Number(col)];
-                            pos_y = Number(pos_y) + Number(lig);
+                    for (let j = 0; j < col_letters.length; j++) {
+                        if (col_letters[j] === pos_x) {
+                            if (n.slice(0, 1) === "w") {
+                                pos_x = col_letters[j + Number(col)];
+                                pos_y = Number(pos_y) + Number(lig);
+                            }
+                            else {
+                                pos_x = col_letters[j - Number(col)];
+                                pos_y = Number(pos_y) - Number(lig);
+
+                            }
                             let caseEnable = pos_x + Number(pos_y);
                             if (Number(pos_y >= 1)) {
                                 if (document.getElementById(caseEnable) != null) {
