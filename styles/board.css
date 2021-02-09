@@ -1,13 +1,17 @@
-.caseBlanc, .caseBrun{
-    height : 70px;
-    width : 70px;
+.caseBlanche, .caseBrun{
+    height : 80px;
+    width : 80px;
     border : 1px solid #000000;
     }
     .caseBrun {
     background-color: rgb(71, 17, 17);
     }
-    .caseBlanc {
-    background-color: #ffffff;
+    .caseBlanche {
+    background-color: #c4c4c4;
+    }
+
+    .caseEnable {
+        background-color: indianred;
     }
 
     .pos {
