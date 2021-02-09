@@ -1155,8 +1155,8 @@
     ],
     "b_queen": [
         {
-            "name": "w_queen",
-            "color": "white",
+            "name": "b_queen",
+            "color": "black",
             "case_color": "0",
             "moves": [
                 {
