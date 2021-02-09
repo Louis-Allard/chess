@@ -7,6 +7,7 @@
  | |     | | | |___  | |___  | |___   ___| | 
  |_|     |_| |_____| \_____| |_____| /_____/ 
  ************************************************/
+let url = "http://127.0.0.1:5500/moves.json";
 
 function pieces_showmoves(n, pos_x, pos_y) {
     /**  Show pieces possibility
@@ -14,7 +15,6 @@ function pieces_showmoves(n, pos_x, pos_y) {
      *   pos_x => piece horizontal position: c
      *   pos_y => piece vertical position: l
      * **/
-    url = "http://127.0.0.1:5500/moves.json";
     fetch(url)
         .then((response) => {
             if (response.status >= 200 && response.status <= 299) {
@@ -28,7 +28,7 @@ function pieces_showmoves(n, pos_x, pos_y) {
                 const moves = jsonResponse[n][i].moves;
                 if (jsonResponse[n][i].name == n) {
                     for (let j = 0; j < moves.length; j++) {
-                        if (moves[j]["enabled"] == "1") {
+                        if (moves[j]["enabled"] === "1") {
                             let c = moves[j]["case"];
                             casesEnable(c, pos_x, pos_y);
                         }
@@ -45,7 +45,6 @@ function pieces_showmoves(n, pos_x, pos_y) {
 
 function casesEnable(c, pos_x, pos_y) {
     /** Name cases around each piece **/
-    url = "http://127.0.0.1:5500/moves.json";
     const col_letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X"];
     fetch(url)
         .then((response) => {
@@ -63,6 +62,7 @@ function casesEnable(c, pos_x, pos_y) {
                     for (let i = 0; i < col_letters.length; i++) {
                         if (col_letters[i] === pos_x) {
                             pos_x = col_letters[i + Number(col)];
+                            console.log("New posx:: " + pos_x)
                         }
                     }
                     pos_y = Number(pos_y) + Number(lig);

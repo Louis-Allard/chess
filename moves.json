@@ -432,8 +432,8 @@
                 },
                 {
                     "case": "J",
-                    "enabled":"1",
-                    "all":"1"
+                    "enabled":"0",
+                    "all":"0"
                 },
                 {
                     "case": "K",
@@ -442,8 +442,8 @@
                 },
                 {
                     "case": "L",
-                    "enabled":"1",
-                    "all":"1"
+                    "enabled":"0",
+                    "all":"0"
                 },
                 {
                     "case": "M",
@@ -452,13 +452,13 @@
                 },
                 {
                     "case": "N",
-                    "enabled":"1",
-                    "all":"1"
+                    "enabled":"0",
+                    "all":"0"
                 },
                 {
                     "case": "O",
-                    "enabled":"1",
-                    "all":"1"
+                    "enabled":"0",
+                    "all":"0"
                 },
                 {
                     "case": "P",
@@ -472,13 +472,13 @@
                 },
                 {
                     "case": "R",
-                    "enabled":"1",
-                    "all":"1"
+                    "enabled":"0",
+                    "all":"0"
                 },
                 {
                     "case": "S",
-                    "enabled":"1",
-                    "all":"1"
+                    "enabled":"0",
+                    "all":"0"
                 },
                 {
                     "case": "T",
@@ -487,8 +487,8 @@
                 },
                 {
                     "case": "U",
-                    "enabled":"1",
-                    "all":"1"
+                    "enabled":"0",
+                    "all":"0"
                 },
                 {
                     "case": "V",
@@ -497,8 +497,8 @@
                 },
                 {
                     "case": "W",
-                    "enabled":"1",
-                    "all":"1"
+                    "enabled":"0",
+                    "all":"0"
                 },
                 {
                     "case": "X",
@@ -1155,8 +1155,8 @@
     ],
     "b_queen": [
         {
-            "name": "b_queen",
-            "color": "black",
+            "name": "w_queen",
+            "color": "white",
             "case_color": "0",
             "moves": [
                 {
@@ -1206,8 +1206,8 @@
                 },
                 {
                     "case": "J",
-                    "enabled":"1",
-                    "all":"1"
+                    "enabled":"0",
+                    "all":"0"
                 },
                 {
                     "case": "K",
@@ -1216,8 +1216,8 @@
                 },
                 {
                     "case": "L",
-                    "enabled":"1",
-                    "all":"1"
+                    "enabled":"0",
+                    "all":"0"
                 },
                 {
                     "case": "M",
@@ -1226,13 +1226,13 @@
                 },
                 {
                     "case": "N",
-                    "enabled":"1",
-                    "all":"1"
+                    "enabled":"0",
+                    "all":"0"
                 },
                 {
                     "case": "O",
-                    "enabled":"1",
-                    "all":"1"
+                    "enabled":"0",
+                    "all":"0"
                 },
                 {
                     "case": "P",
@@ -1246,13 +1246,13 @@
                 },
                 {
                     "case": "R",
-                    "enabled":"1",
-                    "all":"1"
+                    "enabled":"0",
+                    "all":"0"
                 },
                 {
                     "case": "S",
-                    "enabled":"1",
-                    "all":"1"
+                    "enabled":"0",
+                    "all":"0"
                 },
                 {
                     "case": "T",
@@ -1261,8 +1261,8 @@
                 },
                 {
                     "case": "U",
-                    "enabled":"1",
-                    "all":"1"
+                    "enabled":"0",
+                    "all":"0"
                 },
                 {
                     "case": "V",
@@ -1271,8 +1271,8 @@
                 },
                 {
                     "case": "W",
-                    "enabled":"1",
-                    "all":"1"
+                    "enabled":"0",
+                    "all":"0"
                 },
                 {
                     "case": "X",
