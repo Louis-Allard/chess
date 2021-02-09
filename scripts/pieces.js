@@ -62,16 +62,17 @@ function casesEnable(c, pos_x, pos_y) {
                     for (let i = 0; i < col_letters.length; i++) {
                         if (col_letters[i] === pos_x) {
                             pos_x = col_letters[i + Number(col)];
-                            console.log("New posx:: " + pos_x)
+                            pos_y = Number(pos_y) + Number(lig);
+                            let caseEnable = pos_x + Number(pos_y);
+                            if (Number(pos_y >= 1)) {
+                                if (document.getElementById(caseEnable) != null) {
+                                    document.getElementById(caseEnable).classList.add("caseEnable");
+                                    setTimeout(() => { document.getElementById(caseEnable).classList.remove("caseEnable") }, 2000);
+                                }
+                            }
                         }
                     }
-                    pos_y = Number(pos_y) + Number(lig);
-                    let caseEnable = pos_x + Number(pos_y);
-                    if (Number(pos_y >= 1)) {
-                        console.log("cases autorisées: " + caseEnable);
-                        document.getElementById(caseEnable).classList.add("caseEnable");
-                        setTimeout(() => { document.getElementById(caseEnable).classList.remove("caseEnable") }, 5000);
-                    }
+
 
                 }
             }
