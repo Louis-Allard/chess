@@ -10,3 +10,9 @@
  function caseName(a,b){
     console.log("Case: [" + a + b + "]");
  }
+
+ function  case_Enable(caseEnable){
+  console.log("--------------------------");
+  console.log("CaseEnable :: " , caseEnable);
+  console.log("--------------------------");
+ }
