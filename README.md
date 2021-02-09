@@ -1,5 +1,5 @@
 # CHESS
-
+***DON'T RUN YET***
 ## 27 01 2021
 
 Do a chess game
@@ -18,7 +18,11 @@ Rules into json
 - [x] Pieces's identification
 - [ ] Show enable cases
 - [ ] Move pieces
+- [ ] Take pieces
+- [ ] Points
 - [ ] Collisions
+- [ ] Check
+- [ ] Check mate
 
 ## Board
 
