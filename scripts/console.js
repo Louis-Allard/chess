@@ -7,12 +7,14 @@
 \_____| \_____/ |_|  \_| /_____/ \_____/ |_____| |_____| 
  **************************************/
 
- function caseName(a,b){
-    console.log("Case: [" + a + b + "]");
- }
+function caseName(a, b) {
+  console.log("---------CONSOLE ---------");
+  console.log("Case: [" + a + b + "]");
+  console.log("--------------------------");
+}
 
- function  case_Enable(caseEnable){
+function case_Enable(c) {
+  console.log("---------CONSOLE ---------");
+  console.log("CaseEnable :: "+ c);
   console.log("--------------------------");
-  console.log("CaseEnable :: " , caseEnable);
-  console.log("--------------------------");
- }
+}

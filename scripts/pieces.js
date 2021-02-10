@@ -82,19 +82,22 @@ function casesEnable(c, n, a, pos_x, pos_y) {
                             switch (a) {
                                 case "0":
                                     caseEnable = pos_x + Number(pos_y);
+                                    showCases(caseEnable,pos_y);
                                     break;
                                 case "1":
+                                    for (l = 0; l < 9; l++) {
+                                        l_pos_y = Number(pos_y) + Number(l);
+                                        if (("-9" < l_pos_y < "9") && (("-9" < j < "9"))) {
+                                            caseEnable = pos_x + Number(l_pos_y);;
+                                            showCases(caseEnable,pos_y);
+                                        }
+                                    }
+                                    break;
                                 default:
+                                    alert("----- ERROR ON a PARAMETER -----");
                                     break;
                             }
-                            if (Number(pos_y >= 1)) {
-                                if (document.getElementById(caseEnable) != null) {
-                                    document.getElementById(caseEnable).classList.add("caseEnable");
-                                    setTimeout(() => { document.getElementById(caseEnable).classList.remove("caseEnable") }, 3000);
-                                    case_Enable(caseEnable);
-                                    return caseEnable;
-                                }
-                            }
+
 
                         }
                     }
@@ -104,4 +107,15 @@ function casesEnable(c, n, a, pos_x, pos_y) {
         ).catch((error) => {
             console.log("Error " + error);
         });
+}
+
+function showCases(caseEnable, pos_y){
+    if (Number(pos_y >= 1)) {
+        if (document.getElementById(caseEnable) != null) {
+            document.getElementById(caseEnable).classList.add("caseEnable");
+            setTimeout(() => { document.getElementById(caseEnable).classList.remove("caseEnable") }, 3000);
+            case_Enable(caseEnable);
+            return caseEnable;
+        }
+    }
 }
