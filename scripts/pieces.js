@@ -54,6 +54,7 @@ function casesEnable(c, n, a, pos_x, pos_y) {
      *   pos_y => piece vertical position: l
      * **/
     const case_letter = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X"];
+    let caseEnable = "";
     fetch(url)
         .then((response) => {
             if (response.status >= 200 && response.status <= 299) {
@@ -78,7 +79,14 @@ function casesEnable(c, n, a, pos_x, pos_y) {
                                 pos_y = Number(pos_y) - Number(lig);
 
                             }
-                            let caseEnable = pos_x + Number(pos_y);
+                            switch (a) {
+                                case "0":
+                                    caseEnable = pos_x + Number(pos_y);
+                                    break;
+                                case "1":
+                                default:
+                                    break;
+                            }
                             if (Number(pos_y >= 1)) {
                                 if (document.getElementById(caseEnable) != null) {
                                     document.getElementById(caseEnable).classList.add("caseEnable");
@@ -87,6 +95,7 @@ function casesEnable(c, n, a, pos_x, pos_y) {
                                     return caseEnable;
                                 }
                             }
+
                         }
                     }
                 }
