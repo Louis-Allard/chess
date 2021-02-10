@@ -94,7 +94,7 @@ function casesEnable(c, n, a, pos_x, pos_y) {
                                     }
                                     break;
                                 default:
-                                    alert("----- ERROR ON a PARAMETER -----");
+                                    alert("----- ERROR ON [a] PARAMETER -----");
                                     break;
                             }
 
