@@ -54,7 +54,8 @@ function casesEnable(c, n, a, pos_x, pos_y) {
      *   pos_y => piece vertical position: l
      * **/
     const case_letter = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X"];
-    let caseEnable = "";
+    let caseEnable = pos_x + pos_y;
+    let array_case =[];
     fetch(url)
         .then((response) => {
             if (response.status >= 200 && response.status <= 299) {
@@ -85,7 +86,7 @@ function casesEnable(c, n, a, pos_x, pos_y) {
                                     if (Number(pos_y >= 1)) {
                                         if (document.getElementById(caseEnable) != null) {
                                             document.getElementById(caseEnable).classList.add("caseEnable");
-                                            setTimeout(() => { document.getElementById(caseEnable).classList.remove("caseEnable") }, 3000);
+                                            setTimeout(() => { document.getElementById(caseEnable).classList.remove("caseEnable") }, 1000);
                                             _case_Enable(caseEnable);
                                             return caseEnable;
                                         }
@@ -94,16 +95,20 @@ function casesEnable(c, n, a, pos_x, pos_y) {
                                 case "1":
                                     for (l = 0; l < 9; l++) {
                                         l_pos_y = Number(pos_y) + Number(l);
-                                        if (("-9" < l_pos_y < "9") && (("-9" < j < "9"))) {
-                                            caseEnable = pos_x + Number(l_pos_y);;
+                                        if (("-9" < l_pos_y < "9") && ("-9" < j < "9") && l_pos_y != "0") {
+                                            caseEnable = pos_x + Number(l_pos_y);
+                                            array_case.push(caseEnable);
+                                            _array_case(array_case);
+                                            /*
                                             if (Number(pos_y >= 1)) {
                                                 if (document.getElementById(caseEnable) != null) {
                                                     document.getElementById(caseEnable).classList.add("caseEnable");
-                                                    setTimeout(() => { document.getElementById(caseEnable).classList.remove("caseEnable") }, 3000);
+                                                    setTimeout(() => { document.getElementById(caseEnable).classList.remove("caseEnable") }, 1000);
                                                     _case_Enable(caseEnable);
                                                     return caseEnable;
                                                 }
                                             }
+                                            */
                                         }
                                     }
                                     break;
@@ -111,8 +116,6 @@ function casesEnable(c, n, a, pos_x, pos_y) {
                                     alert("----- ERROR ON [a] PARAMETER -----");
                                     break;
                             }
-
-
                         }
                     }
                 }

@@ -16,5 +16,9 @@ function _caseName(a, b) {
 function _case_Enable(c) {
   console.log("---------CONSOLE ---------");
   console.log("CaseEnable :: "+ c);
-  console.log("--------------------------");
+}
+
+function _array_case(array_case){
+  console.log("---------CONSOLE ---------");
+  console.log("Array Case :: ",  array_case);
 }
