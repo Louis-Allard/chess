@@ -114,7 +114,7 @@ function showCases(caseEnable, pos_y){
         if (document.getElementById(caseEnable) != null) {
             document.getElementById(caseEnable).classList.add("caseEnable");
             setTimeout(() => { document.getElementById(caseEnable).classList.remove("caseEnable") }, 3000);
-            case_Enable(caseEnable);
+            _case_Enable(caseEnable);
             return caseEnable;
         }
     }
