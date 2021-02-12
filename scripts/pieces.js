@@ -55,7 +55,7 @@ function casesEnable(c, n, a, pos_x, pos_y, array_case) {
      *   pos_x => piece horizontal position: c
      *   pos_y => piece vertical position: l
      * **/
-    const case_letter = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X"];
+    const case_letter = ["A", "B", "C", "D", "E", "F", "G", "H"];
     let caseEnable = pos_x + pos_y;
     fetch(url)
         .then((response) => {
@@ -73,18 +73,18 @@ function casesEnable(c, n, a, pos_x, pos_y, array_case) {
                     for (let j = 0; j < case_letter.length; j++) {
                         if (case_letter[j] === pos_x) {
                             if (n.slice(0, 1) === "w") {
-                                pos_x = case_letter[j + Number(col)];
-                                pos_y = Number(pos_y) + Number(lig);
+                                npos_x = case_letter[j + Number(col)];
+                                npos_y = Number(pos_y) + Number(lig);
                             }
                             else {
-                                pos_x = case_letter[j - Number(col)];
-                                pos_y = Number(pos_y) - Number(lig);
+                                npos_x = case_letter[j - Number(col)];
+                                npos_y = Number(pos_y) - Number(lig);
 
                             }
                             switch (a) {
                                 case "0":
-                                    caseEnable = pos_x + Number(pos_y);
-                                    if (Number(pos_y >= 1)) {
+                                    caseEnable = npos_x + Number(npos_y);
+                                    if (Number(npos_y >= 1)) {
                                         if (document.getElementById(caseEnable) != null) {
                                             document.getElementById(caseEnable).classList.add("caseEnable");
                                             setTimeout(() => { document.getElementById(caseEnable).classList.remove("caseEnable") }, 1000);
@@ -96,14 +96,9 @@ function casesEnable(c, n, a, pos_x, pos_y, array_case) {
                                 case "1":
                                     switch (n) {
                                         case "w_bishop":
-                                            for (i = 0; i < case_letter.length; i++) {
-                                                npos_x = case_letter[i];
-                                                npos_y = pos_y + i;
-                                                if("0" < npos_y < "9"){
-                                                console.log("pos_x = " + npos_x + " | pos_y = " + npos_y);
-                                                //caseEnable = pos_x + pos_y;
-                                                //array_case.push(caseEnable);
-                                            }
+                                            for (let i = 0; i < case_letter.length; i++) {
+                                                    _npos_x = case_letter[i + 1];
+                                                console.log("nposx:: " + _npos_x);
                                             }
                                             break;
                                         case "w_tower":
