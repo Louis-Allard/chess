@@ -15,7 +15,6 @@ function pieces_showmoves(n, pos_x, pos_y) {
      *   pos_x => piece horizontal position: c
      *   pos_y => piece vertical position: l
      * **/
-    let array_case = [];
     fetch(url)
         .then((response) => {
             if (response.status >= 200 && response.status <= 299) {
@@ -32,7 +31,7 @@ function pieces_showmoves(n, pos_x, pos_y) {
                         if (moves[j]["enabled"] === "1") {
                             let c = moves[j]["case"];
                             let a = moves[j]["all"];
-                            casesEnable(c, n, a, pos_x, pos_y, array_case);
+                            casesEnable(c, n, a, pos_x, pos_y);
                         }
                     }
                 }
@@ -45,7 +44,8 @@ function pieces_showmoves(n, pos_x, pos_y) {
         });
 };
 
-function casesEnable(c, n, a, pos_x, pos_y, array_case) {
+function casesEnable(c, n, a, pos_x, pos_y) {
+console.log("pass")
     /** Name cases around each piece 
      *  Change color of the enable cases 
      *   c     => case letter
@@ -82,33 +82,26 @@ function casesEnable(c, n, a, pos_x, pos_y, array_case) {
                             }
                             switch (a) {
                                 case "0":
-                                    if (n.slice(2,6) != "pawn") {
+                                    //knights and kings
+                                    if (n.slice(2, 6) != "pawn") {
                                         console.log("ok");
                                         caseEnable = npos_x + Number(npos_y);
-                                        if (Number(npos_y >= 1)) {
-                                            if (document.getElementById(caseEnable) != null) {
-                                                document.getElementById(caseEnable).classList.add("caseEnable");
-                                                setTimeout(() => { document.getElementById(caseEnable).classList.remove("caseEnable") }, 1000);
-                                                _case_Enable(caseEnable);
-                                                return caseEnable;
-                                            }
-                                        }
+                                        showCase(caseEnable);
                                     }
                                     else {
-                                        console.log(n.slice(2,6));
+                                        console.log(n.slice(2, 6));
                                     }
 
                                     break;
                                 case "1":
                                     switch (n) {
                                         case "w_bishop":
-                                            for (let i = 0; i < case_letter.length; i++) {
-                                                _npos_x = case_letter[i + 1];
-                                                console.log("nposx:: " + _npos_x);
-                                            }
+                                            console.log("Not yet !");
                                             break;
                                         case "w_tower":
-                                            console.log("Not yet !");
+                                            for (let k = 0; k < case_letter.length; k++) {
+                                             console.log(case_letter[k])
+                                            }
                                             break;
                                         case "w_queen":
                                             console.log("Not yet !");
@@ -139,4 +132,14 @@ function casesEnable(c, n, a, pos_x, pos_y, array_case) {
         ).catch((error) => {
             console.log("Error " + error);
         });
+}
+function showCase(caseEnable){
+    if (Number(npos_y >= 1)) {
+        if (document.getElementById(caseEnable) != null) {
+            document.getElementById(caseEnable).classList.add("caseEnable");
+            setTimeout(() => { document.getElementById(caseEnable).classList.remove("caseEnable") }, 1000);
+            _case_Enable(caseEnable);
+            return caseEnable;
+        }
+    }
 }
