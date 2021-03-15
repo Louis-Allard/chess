@@ -45,7 +45,7 @@ function pieces_showmoves(n, pos_x, pos_y) {
 };
 
 function casesEnable(c, n, a, pos_x, pos_y) {
-console.log("pass")
+console.log("Pass into casesEnable");
     /** Name cases around each piece 
      *  Change color of the enable cases 
      *   c     => case letter
@@ -84,7 +84,6 @@ console.log("pass")
                                 case "0":
                                     //knights and kings
                                     if (n.slice(2, 6) != "pawn") {
-                                        console.log("ok");
                                         caseEnable = npos_x + Number(npos_y);
                                         showCase(caseEnable);
                                     }
@@ -99,9 +98,12 @@ console.log("pass")
                                             console.log("Not yet !");
                                             break;
                                         case "w_tower":
-                                            for (let k = 0; k < case_letter.length; k++) {
-                                             console.log(case_letter[k])
+                                            console.log("===============");
+                                            for (let k = 1; k < 9; k++) {
+                                             caseEnable = pos_x + k;
+                                             showCase(caseEnable);
                                             }
+                                            console.log("===============");
                                             break;
                                         case "w_queen":
                                             console.log("Not yet !");
@@ -109,16 +111,6 @@ console.log("pass")
                                         default:
                                             break;
                                     }
-                                    /* SHOW THE ENABLE CASES
-                                    if (Number(pos_y >= 1)) {
-                                        if (document.getElementById(caseEnable) != null) {
-                                            document.getElementById(caseEnable).classList.add("caseEnable");
-                                            setTimeout(() => { document.getElementById(caseEnable).classList.remove("caseEnable") }, 1000);
-                                            _case_Enable(caseEnable);
-                                            return caseEnable;
-                                        }
-                                    }
-                                    */
                                     break;
                                 default:
                                     alert("----- ERROR ON [a] PARAMETER -----");
