@@ -84,14 +84,13 @@ console.log("Pass into casesEnable");
                             switch (a) {
                                 case "0":
                                     //knights and kings
-                                    if (n.slice(2, 6) != "pawn") {
+                                    if (piece != "pawn") {
                                         caseEnable = npos_x + Number(npos_y);
                                         showCase(caseEnable);
                                     }
                                     else {
-                                        console.log(n.slice(2, 6));
+                                        console.log(piece);
                                     }
-
                                     break;
                                 case "1":
                                     switch (piece) {
