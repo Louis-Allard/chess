@@ -56,6 +56,7 @@ console.log("Pass into casesEnable");
      * **/
     const case_letter = ["A", "B", "C", "D", "E", "F", "G", "H"];
     let caseEnable = pos_x + pos_y;
+    let piece = n.slice(2,8);
     fetch(url)
         .then((response) => {
             if (response.status >= 200 && response.status <= 299) {
@@ -93,19 +94,23 @@ console.log("Pass into casesEnable");
 
                                     break;
                                 case "1":
-                                    switch (n) {
-                                        case "w_bishop":
+                                    switch (piece) {
+                                        case "bishop":
                                             console.log("Not yet !");
                                             break;
-                                        case "w_tower":
+                                        case "tower":
                                             console.log("===============");
-                                            for (let k = 1; k < 9; k++) {
+                                           for (let k = 1; k < 9; k++) {
                                              caseEnable = pos_x + k;
                                              showCase(caseEnable);
                                             }
+                                            for (let l=0; l < case_letter.length; l++ ) {
+                                                caseEnable = case_letter[l] + pos_y;
+                                                showCase(caseEnable);
+                                            }
                                             console.log("===============");
                                             break;
-                                        case "w_queen":
+                                        case "queen":
                                             console.log("Not yet !");
                                             break;
                                         default:
