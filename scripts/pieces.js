@@ -83,21 +83,40 @@ function casesEnable(c, n, a, pos_x, pos_y, array_case) {
                             }
                             switch (a) {
                                 case "0":
-                                    caseEnable = npos_x + Number(npos_y);
-                                    if (Number(npos_y >= 1)) {
-                                        if (document.getElementById(caseEnable) != null) {
-                                            document.getElementById(caseEnable).classList.add("caseEnable");
-                                            setTimeout(() => { document.getElementById(caseEnable).classList.remove("caseEnable") }, 1000);
-                                            _case_Enable(caseEnable);
-                                            return caseEnable;
+                                    if (n != "w_pawn") {
+                                        caseEnable = npos_x + Number(npos_y);
+                                        if (Number(npos_y >= 1)) {
+                                            if (document.getElementById(caseEnable) != null) {
+                                                document.getElementById(caseEnable).classList.add("caseEnable");
+                                                setTimeout(() => { document.getElementById(caseEnable).classList.remove("caseEnable") }, 1000);
+                                                _case_Enable(caseEnable);
+                                                return caseEnable;
+                                            }
                                         }
                                     }
+                                    else {
+                                        if (npos_y = "2") {
+                                            for (i = 1; i < 3; i++) {
+                                                let cp = Number(npos_y) + Number(i);
+                                                caseEnable = npos_x + cp;
+                                                if (document.getElementById(caseEnable) != null) {
+                                                    document.getElementById(caseEnable).classList.add("caseEnable");
+                                                    setTimeout(() => { document.getElementById(caseEnable).classList.remove("caseEnable") }, 1000);
+                                                    _case_Enable(caseEnable);
+                                                }
+                                            }
+                                        }
+                                        else {
+
+                                        }
+                                    }
+
                                     break;
                                 case "1":
                                     switch (n) {
                                         case "w_bishop":
                                             for (let i = 0; i < case_letter.length; i++) {
-                                                    _npos_x = case_letter[i + 1];
+                                                _npos_x = case_letter[i + 1];
                                                 console.log("nposx:: " + _npos_x);
                                             }
                                             break;
