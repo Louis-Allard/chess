@@ -43,7 +43,6 @@ function pieces_showmoves(n, pos_x, pos_y) {
         }).catch((error) => {
             console.log("Error " + error);
         });
-    _array_case(array_case);
 };
 
 function casesEnable(c, n, a, pos_x, pos_y, array_case) {
@@ -83,7 +82,8 @@ function casesEnable(c, n, a, pos_x, pos_y, array_case) {
                             }
                             switch (a) {
                                 case "0":
-                                    if (n != "w_pawn") {
+                                    if (n.slice(2,6) != "pawn") {
+                                        console.log("ok");
                                         caseEnable = npos_x + Number(npos_y);
                                         if (Number(npos_y >= 1)) {
                                             if (document.getElementById(caseEnable) != null) {
@@ -95,20 +95,7 @@ function casesEnable(c, n, a, pos_x, pos_y, array_case) {
                                         }
                                     }
                                     else {
-                                        if (npos_y = "2") {
-                                            for (i = 1; i < 3; i++) {
-                                                let cp = Number(npos_y) + Number(i);
-                                                caseEnable = npos_x + cp;
-                                                if (document.getElementById(caseEnable) != null) {
-                                                    document.getElementById(caseEnable).classList.add("caseEnable");
-                                                    setTimeout(() => { document.getElementById(caseEnable).classList.remove("caseEnable") }, 1000);
-                                                    _case_Enable(caseEnable);
-                                                }
-                                            }
-                                        }
-                                        else {
-
-                                        }
+                                        console.log(n.slice(2,6));
                                     }
 
                                     break;
