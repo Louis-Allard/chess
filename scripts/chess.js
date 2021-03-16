@@ -9,7 +9,7 @@
 
 let nombre = 1;
 let col = ["A", "B", "C", "D", "E", "F", "G", "H"];
-document.write('<table>');
+document.write('<table id="board">');
 for (let l = 8; l > 0; l--) {
     document.write('<tr><td class="pos">' + l + '</td>');
     for (let c = 1; c < 9; c++) {
