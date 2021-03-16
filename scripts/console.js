@@ -11,6 +11,7 @@ function _caseName(a, b) {
   console.log("------- CONSOLE CASE NAME -------");
   console.log("Case: [" + a + b + "]");
   console.log("--------------------------");
+  document.getElementById("elements").innerHTML += "Case: [" + a + b + "]" + "<br />";
 }
 
 function _case_Enable(c) {
