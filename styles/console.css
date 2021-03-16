@@ -1,0 +1,13 @@
+#console {
+    width:50%;
+    height: 680px;
+    border: 3px solid grey;
+    float: right;
+}
+
+#title {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: black;
+    text-align:center;
+}
