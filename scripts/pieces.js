@@ -53,7 +53,10 @@ function casesEnable(c, n, a, pos_x, pos_y) {
      *   pos_x => piece horizontal position: c
      *   pos_y => piece vertical position: l
      * **/
-    const case_letter = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X"];
+    const case_letter = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    let caseEnable = pos_x + pos_y;
+    let piece = n.slice(2, 8);
+    let color = n.slice(0, 1);
     fetch(url)
         .then((response) => {
             if (response.status >= 200 && response.status <= 299) {
@@ -70,22 +73,96 @@ function casesEnable(c, n, a, pos_x, pos_y) {
                     for (let j = 0; j < case_letter.length; j++) {
                         if (case_letter[j] === pos_x) {
                             if (n.slice(0, 1) === "w") {
-                                pos_x = case_letter[j + Number(col)];
-                                pos_y = Number(pos_y) + Number(lig);
+                                npos_x = case_letter[j + Number(col)];
+                                npos_y = Number(pos_y) + Number(lig);
                             }
                             else {
-                                pos_x = case_letter[j - Number(col)];
-                                pos_y = Number(pos_y) - Number(lig);
+                                npos_x = case_letter[j - Number(col)];
+                                npos_y = Number(pos_y) - Number(lig);
 
                             }
-                            let caseEnable = pos_x + Number(pos_y);
-                            if (Number(pos_y >= 1)) {
-                                if (document.getElementById(caseEnable) != null) {
-                                    document.getElementById(caseEnable).classList.add("caseEnable");
-                                    setTimeout(() => { document.getElementById(caseEnable).classList.remove("caseEnable") }, 3000);
-                                    case_Enable(caseEnable);
-                                    return caseEnable;
-                                }
+                            switch (a) {
+                                case "0":
+                                    //knights and kings
+                                    if (piece != "pawn") {
+                                        caseEnable = npos_x + Number(npos_y);
+                                        showCase(caseEnable);
+                                    }
+                                    else {
+                                        console.log(color + " " + piece);
+                                    }
+                                    break;
+                                case "1":
+                                    switch (piece) {
+                                        case "bishop":
+                                            if (color === "w") {
+                                                for (let k = 0; k < case_letter.length; k++) {
+                                                    caseEnable = case_letter[case_letter.indexOf(pos_x) + k] + (k + 1);
+                                                    showCase(caseEnable);
+                                                }
+                                                for (let k = 0; k < case_letter.length; k++) {
+                                                    caseEnable = case_letter[case_letter.indexOf(pos_x) - k] + (k + 1);
+                                                    showCase(caseEnable);
+                                                }
+                                            }
+                                            if (color === "b") {
+                                                for (let k = case_letter.length; k > 0; k--) {
+                                                    caseEnable = case_letter[case_letter.indexOf(pos_x) + k] + (pos_y - k);
+                                                    showCase(caseEnable);
+                                                }
+                                                for (let k = case_letter.length; k > 0; k--) {
+                                                    caseEnable = case_letter[case_letter.indexOf(pos_x) - k] + (pos_y - k);
+                                                    showCase(caseEnable);
+                                                }
+                                            }
+                                            break;
+                                        case "tower":
+                                            for (let l = 1; l < 9; l++) {
+                                                caseEnable = pos_x + l;
+                                                showCase(caseEnable);
+                                            }
+                                            for (let m = 0; m < case_letter.length; m++) {
+                                                caseEnable = case_letter[m] + pos_y;
+                                                showCase(caseEnable);
+                                            }
+                                            break;
+                                        case "queen":
+                                            if (color === "w") {
+                                                for (let k = 0; k < case_letter.length; k++) {
+                                                    caseEnable = case_letter[case_letter.indexOf(pos_x) + k] + (k + 1);
+                                                    showCase(caseEnable);
+                                                }
+                                                for (let k = 0; k < case_letter.length; k++) {
+                                                    caseEnable = case_letter[case_letter.indexOf(pos_x) - k] + (k + 1);
+                                                    showCase(caseEnable);
+                                                }
+                                            }
+                                            if (color === "b") {
+                                                for (let k = case_letter.length; k > 0; k--) {
+                                                    caseEnable = case_letter[case_letter.indexOf(pos_x) + k] + (pos_y - k);
+                                                    showCase(caseEnable);
+                                                }
+                                                for (let k = case_letter.length; k > 0; k--) {
+                                                    caseEnable = case_letter[case_letter.indexOf(pos_x) - k] + (pos_y - k);
+                                                    showCase(caseEnable);
+                                                }
+                                            }
+                                            for (let l = 1; l < 9; l++) {
+                                                caseEnable = pos_x + l;
+                                                showCase(caseEnable);
+                                            }
+                                            for (let m = 0; m < case_letter.length; m++) {
+                                                caseEnable = case_letter[m] + pos_y;
+                                                showCase(caseEnable);
+                                            }
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                    break;
+                                default:
+                                    alert("----- ERROR ON [a] PARAMETER -----");
+                                    break;
                             }
                         }
                     }
@@ -95,4 +172,14 @@ function casesEnable(c, n, a, pos_x, pos_y) {
         ).catch((error) => {
             console.log("Error " + error);
         });
+}
+function showCase(caseEnable) {
+    if (Number(npos_y >= 1)) {
+        if (document.getElementById(caseEnable) != null) {
+            document.getElementById(caseEnable).classList.add("caseEnable");
+            setTimeout(() => { document.getElementById(caseEnable).classList.remove("caseEnable") }, 1000);
+            //_case_Enable(caseEnable);
+            return caseEnable;
+        }
+    }
 }
