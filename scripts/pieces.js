@@ -45,7 +45,7 @@ function pieces_showmoves(n, pos_x, pos_y) {
 };
 
 function casesEnable(c, n, a, pos_x, pos_y) {
-console.log("Pass into casesEnable");
+    console.log("Pass into casesEnable");
     /** Name cases around each piece 
      *  Change color of the enable cases 
      *   c     => case letter
@@ -56,7 +56,8 @@ console.log("Pass into casesEnable");
      * **/
     const case_letter = ["A", "B", "C", "D", "E", "F", "G", "H"];
     let caseEnable = pos_x + pos_y;
-    let piece = n.slice(2,8);
+    let piece = n.slice(2, 8);
+    let color = n.slice(0,1);
     fetch(url)
         .then((response) => {
             if (response.status >= 200 && response.status <= 299) {
@@ -95,16 +96,23 @@ console.log("Pass into casesEnable");
                                 case "1":
                                     switch (piece) {
                                         case "bishop":
-                                            console.log("Not yet !");
+                                            for (let k = 0; k < case_letter.length; k++) {
+                                                caseEnable = case_letter[case_letter.indexOf(pos_x)+k] + (k+1);
+                                                showCase(caseEnable);
+                                            } 
+                                            for (let k = 0; k < case_letter.length; k++) {
+                                                caseEnable = case_letter[case_letter.indexOf(pos_x)-k] + (k+1);
+                                                showCase(caseEnable);
+                                            } 
                                             break;
                                         case "tower":
                                             console.log("===============");
-                                           for (let k = 1; k < 9; k++) {
-                                             caseEnable = pos_x + k;
-                                             showCase(caseEnable);
+                                            for (let l = 1; l < 9; l++) {
+                                                caseEnable = pos_x + l;
+                                                showCase(caseEnable);
                                             }
-                                            for (let l=0; l < case_letter.length; l++ ) {
-                                                caseEnable = case_letter[l] + pos_y;
+                                            for (let m = 0; m < case_letter.length; m++) {
+                                                caseEnable = case_letter[m] + pos_y;
                                                 showCase(caseEnable);
                                             }
                                             console.log("===============");
@@ -129,7 +137,7 @@ console.log("Pass into casesEnable");
             console.log("Error " + error);
         });
 }
-function showCase(caseEnable){
+function showCase(caseEnable) {
     if (Number(npos_y >= 1)) {
         if (document.getElementById(caseEnable) != null) {
             document.getElementById(caseEnable).classList.add("caseEnable");
