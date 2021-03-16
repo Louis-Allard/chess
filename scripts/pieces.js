@@ -45,7 +45,6 @@ function pieces_showmoves(n, pos_x, pos_y) {
 };
 
 function casesEnable(c, n, a, pos_x, pos_y) {
-    console.log("Pass into casesEnable");
     /** Name cases around each piece 
      *  Change color of the enable cases 
      *   c     => case letter
@@ -90,7 +89,7 @@ function casesEnable(c, n, a, pos_x, pos_y) {
                                         showCase(caseEnable);
                                     }
                                     else {
-                                        console.log(piece);
+                                        console.log(color + " " + piece);
                                     }
                                     break;
                                 case "1":
@@ -128,7 +127,34 @@ function casesEnable(c, n, a, pos_x, pos_y) {
                                             }
                                             break;
                                         case "queen":
-                                            console.log("Not yet !");
+                                            if (color === "w") {
+                                                for (let k = 0; k < case_letter.length; k++) {
+                                                    caseEnable = case_letter[case_letter.indexOf(pos_x) + k] + (k + 1);
+                                                    showCase(caseEnable);
+                                                }
+                                                for (let k = 0; k < case_letter.length; k++) {
+                                                    caseEnable = case_letter[case_letter.indexOf(pos_x) - k] + (k + 1);
+                                                    showCase(caseEnable);
+                                                }
+                                            }
+                                            if (color === "b") {
+                                                for (let k = case_letter.length; k > 0; k--) {
+                                                    caseEnable = case_letter[case_letter.indexOf(pos_x) + k] + (pos_y - k);
+                                                    showCase(caseEnable);
+                                                }
+                                                for (let k = case_letter.length; k > 0; k--) {
+                                                    caseEnable = case_letter[case_letter.indexOf(pos_x) - k] + (pos_y - k);
+                                                    showCase(caseEnable);
+                                                }
+                                            }
+                                            for (let l = 1; l < 9; l++) {
+                                                caseEnable = pos_x + l;
+                                                showCase(caseEnable);
+                                            }
+                                            for (let m = 0; m < case_letter.length; m++) {
+                                                caseEnable = case_letter[m] + pos_y;
+                                                showCase(caseEnable);
+                                            }
                                             break;
                                         default:
                                             break;
@@ -152,7 +178,7 @@ function showCase(caseEnable) {
         if (document.getElementById(caseEnable) != null) {
             document.getElementById(caseEnable).classList.add("caseEnable");
             setTimeout(() => { document.getElementById(caseEnable).classList.remove("caseEnable") }, 1000);
-            _case_Enable(caseEnable);
+            //_case_Enable(caseEnable);
             return caseEnable;
         }
     }
