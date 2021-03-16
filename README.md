@@ -16,7 +16,7 @@ Rules into json
 - [x] sprites
 - [x] Cases's identification
 - [x] Pieces's identification
-- [ ] Show enable cases
+- [x] Show enable cases
 - [ ] Move pieces
 - [ ] Take pieces
 - [ ] Points
