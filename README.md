@@ -12,6 +12,7 @@ Rules into json
 
 ## Steps
 
+- [ ] Console
 - [x] board
 - [x] sprites
 - [x] Cases's identification
