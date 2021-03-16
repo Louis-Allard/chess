@@ -57,7 +57,7 @@ function casesEnable(c, n, a, pos_x, pos_y) {
     const case_letter = ["A", "B", "C", "D", "E", "F", "G", "H"];
     let caseEnable = pos_x + pos_y;
     let piece = n.slice(2, 8);
-    let color = n.slice(0,1);
+    let color = n.slice(0, 1);
     fetch(url)
         .then((response) => {
             if (response.status >= 200 && response.status <= 299) {
@@ -96,17 +96,28 @@ function casesEnable(c, n, a, pos_x, pos_y) {
                                 case "1":
                                     switch (piece) {
                                         case "bishop":
-                                            for (let k = 0; k < case_letter.length; k++) {
-                                                caseEnable = case_letter[case_letter.indexOf(pos_x)+k] + (k+1);
-                                                showCase(caseEnable);
-                                            } 
-                                            for (let k = 0; k < case_letter.length; k++) {
-                                                caseEnable = case_letter[case_letter.indexOf(pos_x)-k] + (k+1);
-                                                showCase(caseEnable);
-                                            } 
+                                            if (color === "w") {
+                                                for (let k = 0; k < case_letter.length; k++) {
+                                                    caseEnable = case_letter[case_letter.indexOf(pos_x) + k] + (k + 1);
+                                                    showCase(caseEnable);
+                                                }
+                                                for (let k = 0; k < case_letter.length; k++) {
+                                                    caseEnable = case_letter[case_letter.indexOf(pos_x) - k] + (k + 1);
+                                                    showCase(caseEnable);
+                                                }
+                                            }
+                                            if (color === "b") {
+                                                for (let k = case_letter.length; k > 0; k--) {
+                                                    caseEnable = case_letter[case_letter.indexOf(pos_x) + k] + (pos_y - k);
+                                                    showCase(caseEnable);
+                                                }
+                                                for (let k = case_letter.length; k > 0; k--) {
+                                                    caseEnable = case_letter[case_letter.indexOf(pos_x) - k] + (pos_y - k);
+                                                    showCase(caseEnable);
+                                                }
+                                            }
                                             break;
                                         case "tower":
-                                            console.log("===============");
                                             for (let l = 1; l < 9; l++) {
                                                 caseEnable = pos_x + l;
                                                 showCase(caseEnable);
@@ -115,7 +126,6 @@ function casesEnable(c, n, a, pos_x, pos_y) {
                                                 caseEnable = case_letter[m] + pos_y;
                                                 showCase(caseEnable);
                                             }
-                                            console.log("===============");
                                             break;
                                         case "queen":
                                             console.log("Not yet !");
