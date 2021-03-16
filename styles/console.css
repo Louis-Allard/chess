@@ -1,9 +1,11 @@
 #console {
     width:50%;
     height: 680px;
+    margin-right: 10px;
     border: 3px solid grey;
     float: right;
     background-color: black;
+    overflow-y: scroll;
 }
 
 #title {

@@ -8,10 +8,12 @@
  **************************************/
 
 function _caseName(a, b) {
+  let time = new Date();
+  let timeStr = time.toLocaleTimeString();
   console.log("------- CONSOLE CASE NAME -------");
-  console.log("Case: [" + a + b + "]");
+  console.log("Case => [" + a + b + "]");
   console.log("--------------------------");
-  document.getElementById("elements").innerHTML += "Case: [" + a + b + "]" + "<br />";
+  document.getElementById("elements").innerHTML += "[" + timeStr + "] : " + "Case => [" + a + b + "]" + "<br />";
 }
 
 function _case_Enable(c) {
