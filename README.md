@@ -17,10 +17,10 @@ Rules into json
 - [x] Cases's identification
 - [x] Pieces's identification
 - [x] Show enable cases
+- [ ] Collisions
 - [ ] Move pieces
 - [ ] Take pieces
 - [ ] Points
-- [ ] Collisions
 - [ ] Check
 - [ ] Check mate
 
